@@ -24,7 +24,7 @@ background:linear-gradient(-45deg,#ff9a9e,#fecfef,#fad0c4,#fcb69f);
 background-size:400% 400%;
 animation:bg 12s ease infinite;
 overflow:hidden;
-color:white;
+color:#6b0f1a;
 }
 
 @keyframes bg{
@@ -37,10 +37,11 @@ color:white;
 text-align:center;
 padding:40px;
 border-radius:25px;
-background:rgba(255,255,255,0.15);
+background:rgba(255,255,255,0.6);
 backdrop-filter:blur(10px);
 box-shadow:0 0 40px rgba(255,255,255,0.3);
 animation:fade 2s ease;
+max-width:500px;
 }
 
 @keyframes fade{
@@ -50,13 +51,13 @@ to{opacity:1}
 
 h1{
 font-family:'Pacifico',cursive;
-font-size:3.5em;
+font-size:3.2em;
 margin-bottom:10px;
+color:#b3123f;
 }
 
 .subtitle{
 font-size:1.2em;
-opacity:0.9;
 margin-bottom:20px;
 }
 
@@ -65,8 +66,8 @@ margin-top:15px;
 padding:12px 28px;
 border:none;
 border-radius:30px;
-background:white;
-color:#ff4b7d;
+background:#ff4b7d;
+color:white;
 font-size:16px;
 cursor:pointer;
 transition:0.3s;
@@ -74,7 +75,7 @@ transition:0.3s;
 
 button:hover{
 transform:scale(1.15);
-box-shadow:0 0 15px white;
+box-shadow:0 0 15px #ff4b7d;
 }
 
 #letter{
@@ -122,14 +123,6 @@ animation:spark 4s linear infinite;
 100%{opacity:0; transform:scale(1.5)}
 }
 
-/* countdown */
-
-.countdown{
-margin-top:15px;
-font-size:1.1em;
-opacity:0.9;
-}
-
 </style>
 </head>
 
@@ -143,8 +136,6 @@ opacity:0.9;
 To the most beautiful girl in my universe
 </div>
 
-<div class="countdown" id="countdown"></div>
-
 <button onclick="showLetter()">Open Your Surprise 🎁</button>
 
 <div id="letter">
@@ -153,87 +144,7 @@ To the most beautiful girl in my universe
 You make my world brighter, my days happier, and my life so much more beautiful.  
 Every moment with you feels like magic and I’m incredibly lucky to have you.  
 
-Today is all about celebrating **the amazing person you are**.  
+Today is all about celebrating <b>the amazing person you are</b>.  
 I hope this year brings you as much happiness as you bring into my life.  
 
-I love you more than words can ever explain. ❤️
-</div>
-
-</div>
-
-<script>
-
-/* surprise letter */
-
-function showLetter(){
-document.getElementById("letter").style.display="block";
-}
-
-/* floating hearts */
-
-function createHeart(){
-
-const heart=document.createElement("div")
-heart.className="heart"
-heart.innerHTML=["❤️","💖","💗","💘"][Math.floor(Math.random()*4)]
-
-heart.style.left=Math.random()*100+"vw"
-heart.style.animationDuration=(Math.random()*3+4)+"s"
-
-document.body.appendChild(heart)
-
-setTimeout(()=>heart.remove(),7000)
-
-}
-
-setInterval(createHeart,250)
-
-/* sparkles */
-
-function createSparkle(){
-
-const s=document.createElement("div")
-s.className="sparkle"
-s.innerHTML="✨"
-
-s.style.left=Math.random()*100+"vw"
-s.style.top=Math.random()*100+"vh"
-
-document.body.appendChild(s)
-
-setTimeout(()=>s.remove(),4000)
-
-}
-
-setInterval(createSparkle,800)
-
-/* birthday countdown example */
-
-const birthday=new Date()
-birthday.setHours(birthday.getHours()+5)
-
-function updateCountdown(){
-
-const now=new Date()
-const diff=birthday-now
-
-if(diff<=0){
-document.getElementById("countdown").innerHTML="🎉 It's your special day!"
-return
-}
-
-const h=Math.floor(diff/1000/60/60)
-const m=Math.floor(diff/1000/60)%60
-const s=Math.floor(diff/1000)%60
-
-document.getElementById("countdown").innerHTML=
-"Your birthday surprise in: "+h+"h "+m+"m "+s+"s 🎂"
-
-}
-
-setInterval(updateCountdown,1000)
-
-</script>
-
-</body>
-</html>
+I love you more than
