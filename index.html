@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Shubhangi ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family: 'Poppins', sans-serif;
+background: linear-gradient(-45deg,#ff9a9e,#fad0c4,#ffdde1,#fcb69f);
+background-size:400% 400%;
+animation:gradient 10s ease infinite;
+overflow:hidden;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+text-align:center;
+color:white;
+padding:30px;
+background:rgba(0,0,0,0.2);
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+h1{
+font-size:3em;
+margin-bottom:10px;
+}
+
+p{
+font-size:1.3em;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff4b7d;
+font-size:16px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+#message{
+margin-top:20px;
+display:none;
+font-size:1.2em;
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Happy Birthday ❤️</h1>
+
+<p>To the most beautiful girl in my life.</p>
+
+<p>You make every day brighter, every moment sweeter, and my life infinitely happier.</p>
+
+<button onclick="showMessage()">Click for a Surprise 🎁</button>
+
+<div id="message">
+💖 Happy Birthday my love.  
+Every moment with you feels magical.  
+I’m so lucky to have you in my life.  
+Today we celebrate **you**, the most special person in my world.  
+I love you more than words can ever explain. 💖
+</div>
+
+</div>
+
+<script>
+
+function showMessage(){
+document.getElementById("message").style.display="block";
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
