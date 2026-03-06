@@ -139,12 +139,63 @@ To the most beautiful girl in my universe
 <button onclick="showLetter()">Open Your Surprise 🎁</button>
 
 <div id="letter">
-💖 Happy Birthday my love. <br><br>
+💖 Happy Birthday Shubhangi. <br><br>
 
 You make my world brighter, my days happier, and my life so much more beautiful.  
-Every moment with you feels like magic and I’m incredibly lucky to have you.  
+Every moment with you gives me immense amount of joy and I’m incredibly lucky to have you.  
 
-Today is all about celebrating <b>the amazing person you are</b>.  
 I hope this year brings you as much happiness as you bring into my life.  
 
-I love you more than
+I love you!
+</div>
+
+</div>
+
+<script>
+
+function showLetter(){
+document.getElementById("letter").style.display="block";
+}
+
+/* floating hearts */
+
+function createHeart(){
+
+const heart=document.createElement("div")
+heart.className="heart"
+heart.innerHTML=["❤️","💖","💗","💘"][Math.floor(Math.random()*4)]
+
+heart.style.left=Math.random()*100+"vw"
+heart.style.animationDuration=(Math.random()*3+4)+"s"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>heart.remove(),7000)
+
+}
+
+setInterval(createHeart,250)
+
+/* sparkles */
+
+function createSparkle(){
+
+const s=document.createElement("div")
+s.className="sparkle"
+s.innerHTML="✨"
+
+s.style.left=Math.random()*100+"vw"
+s.style.top=Math.random()*100+"vh"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),4000)
+
+}
+
+setInterval(createSparkle,800)
+
+</script>
+
+</body>
+</html>
